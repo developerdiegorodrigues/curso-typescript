@@ -1,4 +1,6 @@
-// 1 - campos em classes
+/*****************************************************************
+ * 1 - campos em classes
+ *****************************************************************/
 class User {
   name!: string
   age!: number
@@ -10,7 +12,9 @@ matheus.name = "Matheus"
 
 console.log(matheus)
 
-// 2 - constructor
+/*****************************************************************
+ * 2 - constructor
+ *****************************************************************/
 class NewUser {
   name
   age
@@ -26,7 +30,9 @@ const joao = new NewUser("João", 20)
 console.log(joao)
 
 
-// 3 - campo readonly
+/*****************************************************************
+ * 3 - campo readonly
+ *****************************************************************/
 class Car {
   name
   readonly wheels = 4
@@ -40,7 +46,9 @@ const fusca = new Car("Fusca")
 
 console.log(fusca.wheels)
 
-// 4 - herança e super
+/*****************************************************************
+ * 4 - herança e super
+ *****************************************************************/
 class Machine {
   name
 
@@ -62,7 +70,9 @@ const destroyer = new KillerMachine("Destroyer", 4)
 
 console.log(destroyer)
 
-// 5 - métodos
+/*****************************************************************
+ * 5 - métodos
+ *****************************************************************/
 class Dwarf {
   name
 
@@ -79,7 +89,9 @@ const jimmy = new Dwarf("Jimmy")
 
 jimmy.greeting()
 
-// 6 - this
+/*****************************************************************
+ * 6 - this
+ *****************************************************************/
 class Truck {
   model
   hp
@@ -98,7 +110,9 @@ const myTruck = new Truck("Volvo", 400)
 
 myTruck.showDetails()
 
-// 7 - getter
+/*****************************************************************
+ * 7 - getter
+ *****************************************************************/
 class Person {
   name
   surname
@@ -117,7 +131,9 @@ const matheusBattisti = new Person("Matheus", "Battisti")
 
 console.log(matheusBattisti.fullName)
 
-// 8 - setter
+/*****************************************************************
+ * 8 - setter
+ *****************************************************************/
 class Coords {
   x!: number
   y!: number
@@ -154,7 +170,9 @@ myCoords.fillY = 0
 console.log(myCoords)
 
 
-// 9 - implements
+/*****************************************************************
+ * 9 - implements
+ *****************************************************************/
 interface showTitle {
   itemTitle(): string
 }
@@ -176,7 +194,9 @@ const myPost = new blogPost("Hello World")
 
 console.log(myPost.itemTitle())
 
-// 10 - override de métodos
+/*****************************************************************
+ * 10 - override de métodos
+ *****************************************************************/
 class Base {
   someMethod() {
     console.log("Alguma coisa!")
@@ -193,7 +213,9 @@ const myNewClass = new Nova()
 
 myNewClass.someMethod()
 
-// 11 - public
+/*****************************************************************
+ * 11 - public
+ *****************************************************************/
 class C {
   public x = 10
 }
@@ -202,7 +224,9 @@ const cInstance = new C()
 
 console.log(cInstance.x)
 
-// 12 - protected
+/*****************************************************************
+ * 12 - protected
+ *****************************************************************/
 class D {
   protected x = 10
 
@@ -236,7 +260,9 @@ const fInstance = new F()
 
 // fInstance.showX()
 
-// 13 - private
+/*****************************************************************
+ * 13 - private
+ *****************************************************************/
 class PrivateClass {
   private name = "Private"
 
@@ -265,7 +291,9 @@ pClass.showPrivateMethodResult()
 //   }
 // }
 
-// 14 - static members
+/*****************************************************************
+ * 14 - static members
+ *****************************************************************/
 class StaticMembers {
   static prop = "Teste static"
 
@@ -278,7 +306,9 @@ console.log(StaticMembers.prop)
 
 StaticMembers.staticMethod()
 
-// 15 - generic class
+/*****************************************************************
+ * 15 - generic class
+ *****************************************************************/
 class Item<T, U> {
   first
   second
@@ -298,7 +328,9 @@ const newItem = new Item("caixa", "surpresa")
 console.log(newItem.showFirst)
 
 
-// 16 - parameter properties
+/*****************************************************************
+ * 16 - parameter properties
+ *****************************************************************/
 class ParameterClass {
   constructor(public name: string, private qty: number, private price: number) {
     this.name = name
@@ -320,7 +352,9 @@ console.log(newShirt.showQty)
 
 // console.log(newShirt.qty)
 
-// 17 - class expression
+/*****************************************************************
+ * 17 - class expression
+ *****************************************************************/
 const myClass = class<T> {
   name
 
@@ -333,7 +367,9 @@ const pessoa = new myClass("Jones")
 
 console.log(pessoa.name)
 
-// 18 - abstract class
+/*****************************************************************
+ * 18 - abstract class
+ *****************************************************************/
 abstract class AbstractTest {
   abstract showName(): void
 }
@@ -357,7 +393,9 @@ const newObjAbstract = new AbstractExample("Josias")
 
 newObjAbstract.showName()
 
-// 19 - relacoes entre classes
+/*****************************************************************
+ * 19 - relacoes entre classes
+ *****************************************************************/
 class Dog {
   name!: string
 }

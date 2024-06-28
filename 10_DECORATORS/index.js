@@ -5,14 +5,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-// 1 - exemplo decorator
+/*****************************************************************
+ * 1 - exemplo decorator (Método)
+ *****************************************************************/
 function myDecorator() {
     console.log("Iniciando o decorator!");
     return function (target, propertyKey, descriptor) {
         console.log("myDecorator(): executado");
-        console.log(target);
-        console.log(propertyKey);
-        console.log(descriptor);
+        console.log('Nesse caso, a fução do decorator: ', target);
+        console.log('Nesse caso, a key do decorator: ', propertyKey);
+        console.log('Nesse caso o descritor da função: ', descriptor);
+        // configurable
+        // enumerable
+        // value: valor do método
+        // writable
     };
 }
 class MyClass {
@@ -25,7 +31,9 @@ __decorate([
 ], MyClass.prototype, "testing", null);
 const myObj = new MyClass();
 myObj.testing();
-// 2 - multiplos decorators
+/*****************************************************************
+ * 2 - multiplos decorators (Método)
+ *****************************************************************/
 function a() {
     return function (target, propertyKey, descriptor) {
         console.log("Executou a");
@@ -42,12 +50,15 @@ class MultipleClass {
     }
 }
 __decorate([
-    a(),
-    b()
+    a() // segundo
+    ,
+    b() // primeiro
 ], MultipleClass.prototype, "testing", null);
 const multiple = new MultipleClass();
 multiple.testing();
-// 3 - class decorator
+/*****************************************************************
+ * 3 - class decorator (Classe)
+ *****************************************************************/
 function classDec(constructor) {
     console.log(constructor);
     if (constructor.name === "User") {
@@ -63,7 +74,9 @@ User = __decorate([
     classDec
 ], User);
 const matheus = new User("Matheus");
-// 4 - method decorator
+/*****************************************************************
+ * 4 - method decorator
+ *****************************************************************/
 function enumerable(value) {
     return function (target, propertyKey, descriptor) {
         descriptor.enumerable = value;
@@ -82,7 +95,9 @@ __decorate([
 ], Machine.prototype, "showName", null);
 const trator = new Machine("Trator");
 console.log(trator);
-// 5 - acessor decorator
+/*****************************************************************
+ * 5 - acessor decorator
+ *****************************************************************/
 class Monster {
     constructor(name, age) {
         this.name = name;
@@ -103,7 +118,9 @@ __decorate([
 ], Monster.prototype, "showAge", null);
 const charmander = new Monster("Charmander", 10);
 console.log(charmander);
-// 6 - property decorator
+/*****************************************************************
+ * 6 - property decorator
+ *****************************************************************/
 function formatNumber() {
     return function (target, propertyKey) {
         let value;
@@ -129,7 +146,9 @@ __decorate([
 ], ID.prototype, "id", void 0);
 const newItem = new ID("1");
 console.log(newItem.id);
-// 7 - exemplo real de class decorator
+/*****************************************************************
+ * 7 - exemplo real de class decorator
+ *****************************************************************/
 function createdDate(created) {
     created.prototype.createdAt = new Date();
 }
@@ -151,7 +170,9 @@ Pen = __decorate([
 ], Pen);
 const newBook = new Book(1);
 console.log(newBook);
-// 8 - exemplo real method decorator
+/*****************************************************************
+ * 8 - exemplo real method decorator
+ *****************************************************************/
 function checkIfUserPosted() {
     return function (target, key, descriptor) {
         const childFunction = descriptor.value;
@@ -182,7 +203,9 @@ __decorate([
 const somePost = new Post();
 somePost.post("Meu primeiro post!", somePost.alreadyPosted);
 somePost.post("Meu segundo post!", somePost.alreadyPosted);
-// 9 - exemplo real property decorator
+/*****************************************************************
+ * 9 - exemplo real property decorator
+ *****************************************************************/
 function Max(limit) {
     return function (target, propertyKey) {
         let value;

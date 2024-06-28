@@ -1,4 +1,6 @@
-// 1 - tipo de objeto para funções
+/*****************************************************************
+ * 1 - tipo de objeto para funções
+ *****************************************************************/
 interface Product {
   name: string
   price: number
@@ -22,7 +24,9 @@ const shirt: Product = {
 
 showProductDetails(shirt)
 
-// 2 - propriedade opcional em interface
+/*****************************************************************
+ * 2 - propriedade opcional em interface
+ *****************************************************************/
 interface User {
   email: string
   role?: string
@@ -41,7 +45,9 @@ const u2 = { email: 'joao@teste.com' }
 showUserDetails(u1)
 showUserDetails(u2)
 
-// 3 - readonly
+/*****************************************************************
+ * 3 - readonly
+ *****************************************************************/
 interface Car {
   brand: string
   readonly wheels: number
@@ -54,7 +60,9 @@ const fusca: Car = {
 
 // fusca.wheels = 5
 
-// 4 - index signature
+/*****************************************************************
+ * 4 - index signature
+ *****************************************************************/
 interface CoordObject {
   [index: string]: number
 }
@@ -75,7 +83,9 @@ interface OnlyNumberArray {
 const arr1: OnlyNumberArray = [1, 2, 3]
 // const arr2: OnlyNumberArray = ['1', '2', '3']
 
-// 5 - extending types
+/*****************************************************************
+ * 5 - extending types
+ *****************************************************************/
 interface Human {
   name: string
   age: number
@@ -93,7 +103,9 @@ const goku: SuperHuman = {
 
 console.log(goku)
 
-// 6 - intersection types
+/*****************************************************************
+ * 6 - intersection types
+ *****************************************************************/
 interface Character {
   name: string
 }
@@ -113,7 +125,9 @@ const arnold: HumanWithGun = {
 
 console.log(arnold)
 
-// 7 - read only array
+/*****************************************************************
+ * 7 - read only array
+ *****************************************************************/
 
 let myArray: ReadonlyArray<string> = ['Maçã', 'Laranja', 'Pêra']
 
@@ -129,7 +143,9 @@ myArray = myArray.map((item) => {
 
 console.log(myArray)
 
-// 8 - tuplas
+/*****************************************************************
+ * 8 - tuplas
+ *****************************************************************/
 type fiveNumbers = [number, number, number, number, number]
 
 const myNumberArray: fiveNumbers = [1, 2, 3, 4, 5]
@@ -144,7 +160,9 @@ anotherUser[1] = 'João'
 
 console.log(anotherUser)
 
-// 9 - tuplas com readonly
+/*****************************************************************
+ * 9 - tuplas com readonly
+ *****************************************************************/
 function showNumbers(numbers: readonly [number, number]) {
   // numbers[0] = 10
   console.log(numbers[0])

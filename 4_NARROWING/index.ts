@@ -1,4 +1,6 @@
-// 1 - type guard
+/*****************************************************************
+ * 1 - type guard
+ *****************************************************************/
 function sum(a: number | string, b: number | string) {
   if (typeof a === 'string' && typeof b === 'string') {
     console.log(parseFloat(a) + parseFloat(b))
@@ -13,7 +15,9 @@ sum(1, 2)
 sum('4', '4')
 sum('5', 1)
 
-// 2 - checando se valor existe
+/*****************************************************************
+ * 2 - checando se valor existe
+ *****************************************************************/
 
 function operations(arr: number[], operation: string | undefined) {
   if (operation) {
@@ -33,7 +37,9 @@ operations([10, 20, 30], 'sum')
 operations([10, 20, 30], 'multiply')
 operations([10, 20, 30], '')
 
-// 3 - instanceof
+/*****************************************************************
+ * 3 - instanceof
+ *****************************************************************/
 class User {
   name
 
@@ -62,7 +68,9 @@ function userGreeting(user: object) {
 userGreeting(jhon)
 userGreeting(paul)
 
-// 4 - operador in
+/*****************************************************************
+ * 4 - operador in
+ *****************************************************************/
 class Dog {
   name
   breed
@@ -89,7 +97,9 @@ function showDogDetails(dog: Dog) {
 showDogDetails(turca)
 showDogDetails(bob)
 
-// 5 - desafio
+/*****************************************************************
+ * 5 - desafio
+ *****************************************************************/
 type Review = number | boolean
 
 function showUserReview(review: Review) {

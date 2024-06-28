@@ -1,4 +1,6 @@
-// 1 - funcoes sem retorno
+/*****************************************************************
+ * 1 - funcoes sem retorno
+ *****************************************************************/
 function withoutReturn(): void {
   console.log('Não tem retorno')
   // return 1
@@ -6,7 +8,9 @@ function withoutReturn(): void {
 
 withoutReturn()
 
-// 2 - callback como argumento
+/*****************************************************************
+ * 2 - callback como argumento
+ *****************************************************************/
 function greeting(name: string): string {
   return `Olá ${name}!`
 }
@@ -20,7 +24,9 @@ function preGreeting(f: (name: string) => string, name: string) {
 preGreeting(greeting, 'Matheus')
 preGreeting(greeting, 'João')
 
-// 3 - generic function
+/*****************************************************************
+ * 3 - generic function
+ *****************************************************************/
 function firstElement<T>(arr: T[]): T {
   return arr[0]
 }
@@ -41,7 +47,9 @@ const newObj = mergeObjects({ name: 'Matheus' }, { age: 30 })
 
 console.log(newObj)
 
-// 4 - constraints
+/*****************************************************************
+ * 4 - constraints
+ *****************************************************************/
 function biggestNumber<T extends number | string>(a: T, b: T) {
   let biggest
 
@@ -58,7 +66,9 @@ console.log(biggestNumber(5, 2))
 
 console.log(biggestNumber('10', '5'))
 
-// 5 - especificar tipo de argumento
+/*****************************************************************
+ * 5 - especificar tipo de argumento
+ *****************************************************************/
 function mergeArrays<T>(arr1: T[], arr2: T[]) {
   return arr1.concat(arr2)
 }
@@ -66,7 +76,9 @@ function mergeArrays<T>(arr1: T[], arr2: T[]) {
 console.log(mergeArrays([1, 2, 3], [4, 5, 6]))
 console.log(mergeArrays<number | string>([1, 2, 3], ['teste']))
 
-// 6 - parametros opcionais
+/*****************************************************************
+ * 6 - parametros opcionais
+ *****************************************************************/
 function modernGreeting(name: string, greet?: string) {
   if (greet) {
     return `Olá ${greet} ${name}, tudo bem?`
@@ -77,7 +89,9 @@ function modernGreeting(name: string, greet?: string) {
 console.log(modernGreeting('Matheus', 'Sr.'))
 console.log(modernGreeting('João'))
 
-// 7 - parametro default
+/*****************************************************************
+ * 7 - parametro default
+ *****************************************************************/
 function somaDefault(n: number, m = 10) {
   return n + m
 }
@@ -85,7 +99,9 @@ function somaDefault(n: number, m = 10) {
 console.log(somaDefault(5, 20))
 console.log(somaDefault(5))
 
-// 8 - unknown
+/*****************************************************************
+ * 8 - unknown
+ *****************************************************************/
 function doSomething(x: unknown) {
   if (typeof x === 'number') {
     console.log('É um número!')
@@ -98,14 +114,18 @@ function doSomething(x: unknown) {
 doSomething(10)
 doSomething(false)
 
-// 9 - never
+/*****************************************************************
+ * 9 - never
+ *****************************************************************/
 function showErrorMsg(msg: string): never {
   throw new Error(msg)
 }
 
 // showErrorMsg('Algo deu errado!')
 
-// 10 - rest operator como parametro
+/*****************************************************************
+ * 10 - rest operator como parametro
+ *****************************************************************/
 function sumAll(...n: number[]) {
   return n.reduce((number, sum) => sum + number)
 }
@@ -113,7 +133,9 @@ function sumAll(...n: number[]) {
 console.log(sumAll(1, 2, 3, 4))
 console.log(sumAll(4, 5, 6))
 
-// 11 - destructuring como parametro
+/*****************************************************************
+ * 11 - destructuring como parametro
+ *****************************************************************/
 function showProductDetails({
   name,
   price,
@@ -126,4 +148,4 @@ function showProductDetails({
 
 const shirt = { name: 'Camisa', price: 59.99 }
 
-console.log(showProductDetails(shirt))
+//console.log(showProductDetails(shirt))

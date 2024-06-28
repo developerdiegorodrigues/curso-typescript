@@ -1,25 +1,35 @@
-// 1 - instalar e testar typescript
+/*****************************************************************
+ * 1 - instalar e testar typescript
+ *****************************************************************/
 
 // npm i -g typescript
 // tsc -v
 
-// 2 - primeiro programa
+/*****************************************************************
+ * 2 - primeiro programa
+ *****************************************************************/
 const x: number = 5;
 
 // x = "teste";
 
-// 3 - inferência x annotation
+/*****************************************************************
+ * 3 - inferência x annotation
+ *****************************************************************/
 const y = 10;
 const z: number = 15;
 
-// 4 - estrutura inicial
+/*****************************************************************
+ * 4 - estrutura inicial
+ *****************************************************************/
 
 // criação de pastas
 // tsc --init
 // ajuste de outDir e rootDir
 // teste de target com es3 (versoes antigas) e versoes novas
 
-// 5 - tipos básicos
+/*****************************************************************
+ * 5 - tipos básicos
+ *****************************************************************/
 let firstName: string = "Matheus";
 let age: number = 30;
 const isAdmin: boolean = true;
@@ -29,7 +39,9 @@ console.log(typeof firstName);
 console.log(age);
 console.log(isAdmin);
 
-// 6 - arrays
+/*****************************************************************
+ * 6 - arrays
+ *****************************************************************/
 const myNumbers: number[] = [1, 2, 3];
 
 // myNumbers = "teste"
@@ -37,12 +49,16 @@ myNumbers.push(4);
 
 console.log(myNumbers);
 
-// 7 - tuplas
+/*****************************************************************
+ * 7 - tuplas
+ *****************************************************************/
 let myTuple: [number, string, string[]];
 
 myTuple = [10, "string", ["a", "b", "c"]];
 
-// 8 - object literals
+/*****************************************************************
+ * 8 - object literals
+ *****************************************************************/
 const user: { name: string; age: number } = {
   name: "Matheus",
   age: 30,
@@ -53,24 +69,32 @@ console.log(user);
 // user.job = "Programmer"
 // user.age = "30"
 
-// 9 - any
+/*****************************************************************
+ * 9 - any
+ *****************************************************************/
 let a: any = 0;
 
 a = "teste";
 a = true;
 a = [];
 
-// 10 - union type
+/*****************************************************************
+ * 10 - union type
+ *****************************************************************/
 let id: number | string = "10";
 id = 10;
 
-// 11 - type alias
+/*****************************************************************
+ * 11 - type alias
+ *****************************************************************/
 type myIdType = number | string;
 
 const userId: myIdType = 10;
 const productId: myIdType = "0001";
 
-// 12 - enum
+/*****************************************************************
+ * 12 - enum
+ *****************************************************************/
 enum Size {
   P = "Pequeno",
   M = "Médio",
@@ -84,13 +108,17 @@ const camisa = {
 
 console.log(camisa);
 
-// 12.5 - literal types
+/*****************************************************************
+ * 12.5 - literal types
+ *****************************************************************/
 let teste: "algumvalor";
 
 // teste = "outrovalor"
 teste = "algumvalor";
 
-// 13 - funções
+/*****************************************************************
+ * 13 - funções
+ *****************************************************************/
 function sum(a: number, b: number) {
   return a + b;
 }
@@ -120,7 +148,9 @@ function greeting(name: string, greet?: string) {
 greeting("João");
 greeting("Pedro", "Sir");
 
-// 14 - Interfaces
+/*****************************************************************
+ * 14 - Interfaces
+ *****************************************************************/
 interface MathFunctionParams {
   n1: number;
   n2: number;
@@ -141,7 +171,9 @@ const someNumbers: MathFunctionParams = {
 
 console.log(multiplyNumbers(someNumbers));
 
-// 15 - narrowing
+/*****************************************************************
+ * 15 - narrowing
+ *****************************************************************/
 function doSomething(info: number | boolean) {
   if (typeof info === "number") {
     console.log(`O número é ${info}`);
@@ -154,7 +186,9 @@ function doSomething(info: number | boolean) {
 doSomething(5);
 doSomething(false);
 
-// 16 - generics
+/*****************************************************************
+ * 16 - generics
+ *****************************************************************/
 function showArrayItens<U>(arr: U[]) {
   arr.forEach((item) => {
     console.log(`ITEM: ${item}`);
@@ -167,7 +201,9 @@ const a2 = ["a", "b", "c"];
 showArrayItens(a1);
 showArrayItens(a2);
 
-// 17 - classes
+/*****************************************************************
+ * 17 - classes
+ *****************************************************************/
 class User {
   name;
   role;
@@ -188,7 +224,9 @@ const zeca = new User("Zéca", "Admin", true);
 
 zeca.showUserName();
 
-// 18 - interface eem classes
+/*****************************************************************
+ * 18 - interface eem classes
+ *****************************************************************/
 interface IVehicle {
   brand: string;
   showBrand(): void;
@@ -212,7 +250,9 @@ const fusca = new Car("VW", 4);
 
 fusca.showBrand();
 
-// 19 - heranca
+/*****************************************************************
+ * 19 - heranca
+ *****************************************************************/
 class SuperCar extends Car {
   engine;
 
@@ -226,7 +266,9 @@ const a4 = new SuperCar("Audi", 4, 2.0);
 
 a4.showBrand();
 
-// 20 - decorators
+/*****************************************************************
+ * 20 - decorators
+ *****************************************************************/
 // setar experimentalDecorators
 function BaseParameters() {
   return function <T extends { new (...args: any[]): {} }>(constructor: T) {
